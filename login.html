@@ -1,0 +1,61 @@
+<html>
+     <meta charset="ISO-8859-1">   
+    <body style="background-color:grey;">
+        <center>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <h3>Login Page</h3>
+        <form action="journeyDetails.html" onsumbit="login()">
+            <label for="User">User ID</label>
+            <input type="number" name="user" id="user" placeholder="Mobile Number"  onchange ="userId()" required autofocus>
+            <br />
+            <br />
+            <label for="Password">Password</label>
+            <input type="password" name="password" id="pwd" placeholder="12345678" onchange="passwordCheck()" required >
+            <br />
+            <br />
+            <button id="submit">Login</button>
+            <button type="reset">Reset</button>
+        </form>
+        <script>
+            
+               // event.preventDefault();
+                //alert("Login button clicked");
+               
+                //alert("Username: "+userid)
+                
+               // alert("Password: "+pwd);
+            function userId(){
+                let userid=document.querySelector("#user").value;
+                if(userid.length== 10)
+                {   
+                }
+                else{
+                    alert("invalid User ID");
+                     event.preventDefault();
+                }
+            }
+            function passwordCheck(){
+                let pwd=document.querySelector("#pwd").value;
+
+                if(pwd.length==8){  
+                }
+                else{
+                    alert("Invalid Password");
+                    event.preventDefault();
+                }
+                
+            }
+            function login(){
+                let userid=document.querySelector("#user").value;
+                let pwd=document.querySelector("#pwd").value;
+                if(userid.length==10 && pwd.length==8){
+
+                }
+                else{
+                    event.preventDefault();
+                }
+            }
+        </script>
+        </center>
+    </body>
+</html>

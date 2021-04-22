@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>OnlinePay</title>
+</head>
+<body style="background-color:grey;">
+<center>
+<form action="tq.html">
+<h1>Online Payment</h1>
+<p>Please select your card type</p>
+<input type="radio" id="card" name="card" value="credit">
+<label for="credit">Credit</label>
+<input type="radio" id="dard" name="card" value="debit">
+<label for="female">Debit</label>
+<input type="radio" id="card" name="card" value="paypal">
+<label for="paypal" >Paypal</label>
+<br />
+<br />
+<label>Card Number</label>
+<input type="number" id=cardNum placeholder="Card Number" onchange="cardNoCheck()" required>
+<br />
+<br />
+<label>Pin Number</label>
+<input type="password" id=pin placeholder="****" onchange="pinNoCheck()" required>
+<br />
+<br />
+<label>Valid Until</label>
+<input type="month" id=mon placeholder="yyyy-mm" onchange="cardExpire()" required>
+<br />
+<br />
+<label>CVC</label>
+<input type="password" id=cvc placeholder="***" onchange="cvcCheck()" required>
+<br />
+<br />
+<p id= "l1"></p>  
+<br />
+<br />
+<button onclick="window.location.href = 'tq.html'"> Skip </button>
+<button>Next</button>
+</form>
+</center>
+<script>
+function cardNoCheck(){
+let cardNumber=document.querySelector("#cardNum").value;
+if(cardNumber.length==16){  
+}
+else{
+    alert("Invalid Pin Number");
+    event.preventDefault();
+}
+ }
+function pinNoCheck(){
+    let pinNumber=document.querySelector("#pin").value;
+  if(pinNumber.length==4){  
+}
+else{
+    alert("Invalid Pin Number");
+    event.preventDefault();
+}  
+}
+function cvcCheck(){
+    let cvcNumber=document.querySelector("#cvc").value;
+  if(cvcNumber.length==3){  
+    document.getElementById("l1").innerHTML="Online Payment successfull";
+}
+else{
+    alert("Invalid CVC Number");
+    event.preventDefault();
+}  
+}
+function cardExpire(){
+    let cardExpiry=document.getElementById("mon").min="2021-03";
+}
+</script>
+</body>
+</html>

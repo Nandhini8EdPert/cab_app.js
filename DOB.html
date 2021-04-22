@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DOB</title>
+</head>
+<body style="background-color:grey;">
+<center>
+<h1>Suprise with Date Of Birth</h1>
+<form action="onlinePayment.html">
+<label>Date of Birth</label>
+<input type="date" id=dob onchange="ageCalculator()">
+<br />
+<br />
+<p id= "l1";></p>  
+<br />
+<br />
+<p id= "l2";></p>  
+<br />
+<br />
+<p id= "l3";></p>  
+<br />
+<br />
+<p id= "l4";></p>  
+<br />
+<br />
+<button>Confirm</button>
+</form>
+<script>
+
+  function ageCalculator() { 
+    let z=localStorage.getItem("rupee");
+    let gst=localStorage.getItem("gstrupee");
+    let amt=localStorage.getItem("peakRupee");
+    let bdate=document.getElementById("dob").value;
+    let dob= new Date(bdate);
+    let tdate= new Date();
+    dobYear= dob.getFullYear();
+    todayYear=tdate.getFullYear();
+    var age = todayYear-dobYear;
+    document.getElementById("l1").innerHTML= "year" + age;
+
+    if (age>60){
+      famt=amt/2;
+      document.getElementById("l1").innerHTML="You're are eligible for 50% discount";
+      document.getElementById("l2").innerHTML="Your travel charge estimate      Rs."+z;
+      document.getElementById("l3").innerHTML="Your travel charge estimate with GST      Rs."+gst;
+      document.getElementById("l4").innerHTML="Your travel charge estimate with 50% discount Rs."+famt; 
+    }
+    else{
+      document.getElementById("l1").innerHTML="You can have your Final bill";
+      document.getElementById("l2").innerHTML="Your travel charge estimate      Rs."+z;
+      document.getElementById("l3").innerHTML="Your travel charge estimate with GST      Rs."+gst;
+      document.getElementById("l4").innerHTML="Final Bill amount: Rs."+amt;
+    }
+}
+  
+</script>
+</center>
+</body>
+</html>
