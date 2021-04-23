@@ -6,6 +6,7 @@
 <body style="background-color:grey;">
 <form action="DOB.html" >
 <center>
+<br /><br /><br />
 <h1>Journey Details</h1>
 <label>Journey Date</label>
 <input type="date" id="bookDate" placeholder="yyyy-mm--dd" onchange="journeyDate()" required>
@@ -48,9 +49,6 @@
 <br />
 <br />
 <p id= "l1"></p>  
-<br />
-<br />
-<p id= "l2"></p>  
 <br />
 <br />
 <button type="submit">Next</button>
@@ -112,10 +110,10 @@
             let bookingHours= parseInt(time.substr(0,2));
             if(bookingHours>18 && bookingHours<21){
                 amt= gst + (gst * 0.125);
-                document.getElementById("l2").innerHTML=amt;
+                //document.getElementById("l2").innerHTML=amt;
            }
            else{
-            document.getElementById("l2").innerHTML=gst;
+            //document.getElementById("l2").innerHTML=gst;
            }
            localStorage.setItem("peakRupee",amt);
     }
