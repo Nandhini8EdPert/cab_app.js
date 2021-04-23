@@ -110,12 +110,14 @@
             let bookingHours= parseInt(time.substr(0,2));
             if(bookingHours>18 && bookingHours<21){
                 amt= gst + (gst * 0.125);
+		     localStorage.setItem("peakRupee",amt);
                 //document.getElementById("l2").innerHTML=amt;
            }
            else{
+		   amt=gst;
+		    localStorage.setItem("peakRupee",amt);
             //document.getElementById("l2").innerHTML=gst;
            }
-           localStorage.setItem("peakRupee",amt);
     }
 
 
