@@ -105,16 +105,16 @@
             }
             localStorage.setItem("rupee",z);
             localStorage.setItem("gstrupee",gst);
-            let amt=0;
+           
             let time=document.getElementById("bookTime").value;
             let bookingHours= parseInt(time.substr(0,2));
             if(bookingHours>18 && bookingHours<21){
-                amt= gst + (gst * 0.125);
+                let amt= gst + (gst * 0.125);
 		     localStorage.setItem("peakRupee",amt);
                 //document.getElementById("l2").innerHTML=amt;
            }
            else{
-		   amt=gst;
+		   let amt=gst;
 		    localStorage.setItem("peakRupee",amt);
             //document.getElementById("l2").innerHTML=gst;
            }
