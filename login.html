@@ -4,7 +4,7 @@
         <center>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <h3>Login Page</h3>
-        <form action="journeyDetails.html" onsumbit="login()">
+        <form onsumbit="login()">
             <label for="User">User ID</label>
             <input type="number" name="user" id="user" placeholder="Mobile Number"  onchange ="userId()" required autofocus>
             <br />
@@ -18,16 +18,11 @@
         </form>
         <script>
             
-               // event.preventDefault();
-                //alert("Login button clicked");
-               
-                //alert("Username: "+userid)
-                
-               // alert("Password: "+pwd);
+            let usedIdValidation=false,passwordValidation=false;
             function userId(){
                 let userid=document.querySelector("#user").value;
                 if(userid.length== 10)
-                {   
+                {  usedIdValidation=true; 
                 }
                 else{
                     alert("invalid User ID");
@@ -38,6 +33,7 @@
                 let pwd=document.querySelector("#pwd").value;
 
                 if(pwd.length==8){  
+                    passwordValidation=true;
                 }
                 else{
                     alert("Invalid Password");
@@ -46,10 +42,8 @@
                 
             }
             function login(){
-                let userid=document.querySelector("#user").value;
-                let pwd=document.querySelector("#pwd").value;
-                if(userid.length==10 && pwd.length==8){
-
+                if(usedIdValidation==true && passwordValidation==true){
+                    window.location.href = "tq.html";
                 }
                 else{
                     event.preventDefault();
