@@ -35,7 +35,7 @@
 <br />
 <br />
 <label>Enter the number of Km you want to travel</label>
-<input type="number" id="km" placeholder="No of Km" oninput="distance()" required>
+<input type="number" id="km" placeholder="No of Km" onchange="distance()" required>
 <br />
 <br />
 <p>Please select your Gender</p>
@@ -83,6 +83,9 @@
        // }
         function distance(){
             let kiloMetre=document.getElementById("km").value;
+		 if(kiloMetre<1){
+                alert("Please enter valid Km")
+            }
             let carChoice=document.getElementById("cars").value;
             let z=0;
             let gst = 0;
